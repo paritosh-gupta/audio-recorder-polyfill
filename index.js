@@ -85,7 +85,7 @@ MediaRecorder.prototype = {
     this.state = 'recording'
 
     if (!context) {
-      context = new AudioContext()
+          context = new AudioContext({ sampleRate: 16000 });
     }
     this.clone = this.stream.clone()
     var input = context.createMediaStreamSource(this.clone)
